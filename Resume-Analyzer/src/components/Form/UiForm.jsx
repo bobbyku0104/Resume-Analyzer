@@ -3,6 +3,9 @@
 import React, { useState } from "react";
 import PdfUpload from "./PdfUpload";
 import ResumeScan from "../ResumeScan/ResumeScan";
+import ResumeReviewPage from "../ReviewPage/ResumeReviewPage";
+
+
 
 
 
@@ -17,6 +20,8 @@ export default function UiForm() {
 
     const [isScanning, setIsScanning] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
+    const [isReview, setIsReview] = useState(false);
+
 
     const handleChange = (e) => {
         const { name, value, files } = e.target;
@@ -42,6 +47,9 @@ export default function UiForm() {
     };
 
     return (
+        isReview ? (
+      <ResumeReviewPage />
+    ) : 
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-indigo-50 p-6 relative overflow-hidden">
 
             
@@ -153,6 +161,7 @@ export default function UiForm() {
                         onComplete={() => {
                             setTimeout(() => {
                                 setIsScanning(false);
+                                setIsReview(true); 
                             }, 1000); 
                         }}
                     />
