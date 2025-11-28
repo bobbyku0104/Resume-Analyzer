@@ -4,6 +4,7 @@ import ResumeCard from "./Card";
 import Sample1 from "../../assets/resume photo.jpg";
 import Sample2 from "../../assets/resume photo.jpg";
 import Sample3 from "../../assets/resume photo.jpg";
+import { useNavigate } from "react-router-dom";
 
 const resumeData = [
   { 
@@ -81,6 +82,11 @@ const resumeData = [
 ];
 
 const HomeCard = () => {
+   const navigate = useNavigate();
+
+  const openForm = () => {
+    navigate("/form");
+  };
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-blue-50 via-indigo-100 to-purple-100 p-4 relative overflow-hidden">
       
@@ -135,7 +141,7 @@ const HomeCard = () => {
             <p className="text-gray-600 text-sm mb-4">Get instant AI-powered feedback</p>
             
             <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-              <button className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-2 rounded-lg font-semibold text-sm shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 flex items-center gap-2">
+              <button onClick={openForm} className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-2 rounded-lg font-semibold text-sm shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 flex items-center gap-2">
                 <span>📤</span>
                 Upload Resume
               </button>
