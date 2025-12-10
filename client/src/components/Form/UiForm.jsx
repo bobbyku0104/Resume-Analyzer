@@ -1,58 +1,64 @@
-
-
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import PdfUpload from "./PdfUpload";
 import ResumeScan from "../ResumeScan/ResumeScan";
 import ResumeReviewPage from "../ReviewPage/ResumeReviewPage";
-
-
-
-
+import { ResumeContext } from "../Context/ResumeContext";
 
 export default function UiForm() {
+
+    //  PDF Context
+    const { file, setFile } = useContext(ResumeContext);
+
+    // Local Form Data
     const [formData, setFormData] = useState({
         name: "",
         job: "",
         description: "",
         experience: "",
-        resume: null,
     });
 
     const [isScanning, setIsScanning] = useState(false);
-    const [isHovered, setIsHovered] = useState(false);
     const [isReview, setIsReview] = useState(false);
 
-
+    //  Input Change Handler
     const handleChange = (e) => {
-        const { name, value, files } = e.target;
+        const { name, value } = e.target;
+
         setFormData({
             ...formData,
-            [name]: files ? files[0] : value,
+            [name]: value,
         });
     };
 
+    // Form Validation (PDF context se aa rahi hai)
     const isFormValid =
         formData.name &&
         formData.job &&
         formData.description &&
         formData.experience &&
-        formData.resume;
+        file; 
 
+    // Submit Handler
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!isFormValid) return;
 
         setIsScanning(true);
+
         console.log("Form submitted:", formData);
+        console.log("Uploaded PDF:", file);
+
     };
 
+
+    // show Review Page
+    if (isReview) {
+        return <ResumeReviewPage />;
+    }
+
     return (
-        isReview ? (
-      <ResumeReviewPage />
-    ) : 
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-indigo-50 p-6 relative overflow-hidden">
 
-            
             <div className="absolute top-0 left-0 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
             <div className="absolute top-0 right-0 w-72 h-72 bg-indigo-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
             <div className="absolute -bottom-8 left-20 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
@@ -73,11 +79,11 @@ export default function UiForm() {
                     </div>
                 )}
 
-               
+                {/* FORM */}
                 {!isScanning ? (
                     <form onSubmit={handleSubmit} className="flex flex-col gap-6">
 
-                        
+                        {/* Name */}
                         <div className="flex flex-col gap-2">
                             <label className="font-semibold text-gray-700">Candidate Name</label>
                             <input
@@ -90,7 +96,7 @@ export default function UiForm() {
                             />
                         </div>
 
-                        
+                        {/* Job Role */}
                         <div className="flex flex-col gap-2">
                             <label className="font-semibold text-gray-700">Select Job Role</label>
                             <select
@@ -110,7 +116,7 @@ export default function UiForm() {
                             </select>
                         </div>
 
-                        
+                        {/* Job Description */}
                         <div className="flex flex-col gap-2">
                             <label className="font-semibold text-gray-700">Job Description</label>
                             <textarea
@@ -121,7 +127,7 @@ export default function UiForm() {
                             ></textarea>
                         </div>
 
-                    
+                        {/* Experience */}
                         <div className="flex flex-col gap-2">
                             <label className="font-semibold text-gray-700">Years of Experience</label>
                             <input
@@ -134,15 +140,13 @@ export default function UiForm() {
                             />
                         </div>
 
-                       
+                        {/* PDF Upload Component */}
                         <PdfUpload
-                            file={formData.resume}
-                            onChange={(e) =>
-                                setFormData({ ...formData, resume: e.target.files[0] })
-                            }
+                            file={file}
+                            onChange={(e) => setFile(e.target.files[0])}
                         />
 
-                        
+                        {/* Submit Button */}
                         <button
                             type="submit"
                             disabled={!isFormValid}
@@ -161,13 +165,14 @@ export default function UiForm() {
                         onComplete={() => {
                             setTimeout(() => {
                                 setIsScanning(false);
-                                setIsReview(true); 
-                            }, 1000); 
+                                setIsReview(true);
+                            }, 1000);
                         }}
                     />
                 )}
             </div>
 
+            {/* Animation */}
             <style jsx>{`
                 @keyframes blob {
                     0% { transform: translate(0px, 0px) scale(1); }
