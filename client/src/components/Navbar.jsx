@@ -1,18 +1,15 @@
+
 import React from "react";
 
 const Navbar = () => {
   return (
-<nav className="w-full max-w-[1100px] mx-auto mt-4 bg-white shadow-md py-2 px-4 flex items-center justify-between rounded-full">
+    <nav className="w-[95%] max-w-[1150px] mx-auto mt-4 bg-white shadow-md py-2 px-5 flex items-center justify-between rounded-full">
 
-
-
-      
-      <h1 className="text-3xl font-bold text-black">
+      <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-black">
         Resume
       </h1>
 
-     
-      <button className="bg-indigo-600 text-white px-4 py-2  hover:bg-indigo-700 transition rounded-full">
+      <button className="bg-indigo-600 text-white text-sm sm:text-base px-4 py-2 rounded-full hover:bg-indigo-700 transition">
         Upload Resume
       </button>
 

@@ -61,24 +61,7 @@ const resumeData = [
     status: "Strong Match",
     analysis: "8/10 Skills"
   },
-  //  { 
-  //   id: 3, 
-  //   title: "Mike - Data Scientist", 
-  //   image: Sample3, 
-  //   score: 95,
-  //   date: "Just now",
-  //   status: "Excellent",
-  //   analysis: "9/10 Skills"
-  // },
-  //  { 
-  //   id: 3, 
-  //   title: "Mike - Data Scientist", 
-  //   image: Sample3, 
-  //   score: 95,
-  //   date: "Just now",
-  //   status: "Excellent",
-  //   analysis: "9/10 Skills"
-  // },
+  
 ];
 
 const HomeCard = () => {
@@ -185,20 +168,7 @@ const HomeCard = () => {
           ))}
         </div> 
 
-       {/* <div className="grid grid-cols-3 gap-4">
-  {resumeData.map((item) => (
-    <ResumeCard
-      key={item.id}
-      image={item.image}
-      title={item.title}
-      score={item.score}
-      date={item.date}
-      status={item.status}
-      analysis={item.analysis}
-    />
-  ))}
-</div> */}
-
+     
 
 
         <div className="mt-12 bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 shadow-md">
