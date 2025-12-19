@@ -141,7 +141,7 @@ const HomeCard = () => {
         </div>
 
 
-        <div className="flex justify-between items-center mb-4">
+        <div className="flex justify-between items-center mb-4 pl-8 pr-5">
           <h2 className="text-lg font-bold text-gray-900">Recent Analysis</h2>
           <div className="flex gap-2">
             <button className="bg-white/80 backdrop-blur-sm px-3 py-1 rounded-lg border border-gray-200 font-medium text-gray-700 text-sm hover:bg-indigo-600 hover:text-white transition-all duration-300">
@@ -154,7 +154,7 @@ const HomeCard = () => {
         </div>
 
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 px-4 sm:px-6 lg:px-0">
           {resumeData.map((item) => (
             <ResumeCard
               key={item.id}

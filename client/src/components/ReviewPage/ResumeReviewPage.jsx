@@ -3,14 +3,14 @@ import { ResumeContext } from "../Context/ResumeContext";
 
 export default function ResumeReviewPage() {
   const { file } = useContext(ResumeContext);
- 
+
 
   return (
     <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 p-6 flex flex-col lg:flex-row gap-6">
 
       {/* Left: Analysis */}
       <div className="w-full lg:w-2/3 bg-white/90 backdrop-blur-lg rounded-3xl shadow-2xl p-8 overflow-y-auto border border-white/60 max-h-screen">
-        
+
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 gap-4">
           <div>
@@ -42,7 +42,7 @@ export default function ResumeReviewPage() {
                 </div>
               </div>
             </div>
-            
+
             <div>
               <p className="text-4xl font-bold text-gray-800">85/100</p>
               <p className="text-gray-600 text-lg mt-2">4 improvement areas identified</p>
@@ -99,15 +99,17 @@ export default function ResumeReviewPage() {
                 </div>
 
                 <div className="flex items-center gap-2">
-                  <div className={`w-3 h-3 rounded-full ${
-                    item.score >= 80 ? "bg-green-500" : 
-                    item.score >= 70 ? "bg-yellow-500" : "bg-red-500"
-                  }`}></div>
+                  <div className={`w-3 h-3 rounded-full ${item.score >= 80 ? "bg-green-500" :
+                      item.score >= 70 ? "bg-yellow-500" : "bg-red-500"
+                    }`}></div>
                   <span className="text-xl text-gray-400">▼</span>
                 </div>
               </div>
             </div>
           ))}
+
+
+          
         </div>
       </div>
 
@@ -115,8 +117,8 @@ export default function ResumeReviewPage() {
       <div className="w-full lg:w-1/3 flex justify-center items-center">
         {file ? (
           <iframe
-            src={URL.createObjectURL(file)}
-            className="w-full h-[80vh] rounded-2xl border-4 border-white shadow-2xl"
+            src={URL.createObjectURL(file)+ "#toolbar=0&navpanes=0&scrollbar=0"}
+            className="w-full h-full rounded-2xl border-4 border-white shadow-2xl "
           ></iframe>
         ) : (
           <div className="text-center p-8 text-gray-500">
@@ -130,6 +132,15 @@ export default function ResumeReviewPage() {
           </div>
         )}
       </div>
+
+
+
+
+
+
+
+
+
     </div>
   );
 }

@@ -8,7 +8,7 @@ export function ResumeProvider({ children }) {
 
     const handleFileUpload = (e) => {
   const selectedFile = e.target.files[0];
-  setFile(selectedFile); // Ye zaruri hai
+  setFile(selectedFile); 
 };
 
 
