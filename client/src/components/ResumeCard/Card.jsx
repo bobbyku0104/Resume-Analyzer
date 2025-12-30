@@ -10,18 +10,19 @@ const Card = ({ image, title, score, date, status, analysis }) => {
 
   return (
     <div className="
+   
       group 
       w-full
-      sm:w-[260px] 
-      md:w-[300px]
-      lg:w-[330px]
+      sm:w-[280px] 
+      md:w-[320px]
+      lg:w-[350px]
       bg-white/30 
       backdrop-blur-xl 
       rounded-2xl 
       shadow-xl 
       border 
       border-white/40 
-      p-3 
+      p-3
       hover:scale-[1.03] 
       transition-all 
       duration-300 

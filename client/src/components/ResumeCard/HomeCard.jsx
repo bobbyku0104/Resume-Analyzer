@@ -1,4 +1,3 @@
-
 import React from "react";
 import ResumeCard from "./Card";
 import Sample1 from "../../assets/resume photo.jpg";
@@ -155,10 +154,11 @@ const HomeCard = () => {
             </button>
           </div>
         </div>
-{/* 
+        {/* 
           resume card section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-4 pb-4 px-4 sm:px-6 lg:pl-20 lg:pr-5
-        ">
+      
+
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {resumeData.map((item) => (
             <ResumeCard
               key={item.id}

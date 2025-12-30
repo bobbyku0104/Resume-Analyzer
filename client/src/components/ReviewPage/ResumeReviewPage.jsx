@@ -139,7 +139,6 @@ export default function ResumeReviewPage({ onBack }) {
         </div>
 
         {/*  RIGHT SECTION*/}
-       
 
         <div className="hidden lg:flex lg:w-1/3 justify-center">
           {file ? (
@@ -161,7 +160,3 @@ export default function ResumeReviewPage({ onBack }) {
     </div>
   );
 }
-
-
-
-
