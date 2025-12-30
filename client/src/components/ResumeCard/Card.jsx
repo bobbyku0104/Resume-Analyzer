@@ -31,11 +31,11 @@ const Card = ({ image, title, score, date, status, analysis }) => {
     ">
 
       {/* Soft gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-100/40 via-purple-100/30 to-pink-100/40 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to- from-indigo-100/40 via-purple-100/30 to-pink-100/40 pointer-events-none"></div>
 
       {/* Status Badge */}
       <div
-        className={`absolute top-2 left-2 bg-gradient-to-r ${statusColors[status]} text-white px-2 py-0.5 rounded-full text-[10px] font-bold z-10 shadow-md`}
+        className={`  absolute top-2 left-2 bg-gradient-to ${statusColors[status]} text-white px-2 py-0.5 rounded-full text-[10px] font-bold z-10 shadow-md`}
       >
         {status}
       </div>

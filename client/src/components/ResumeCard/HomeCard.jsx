@@ -22,7 +22,7 @@ const resumeData = [
     image: Sample2,
     score: 78,
     date: "1 hour ago",
-    status: "Needs Work",
+    status: "Needs Work", 
     analysis: "6/10 Skills"
   },
   {
@@ -71,37 +71,35 @@ const HomeCard = () => {
     navigate("/form");
   };
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-blue-50 via-indigo-100 to-purple-100 p-4 relative overflow-hidden">
-
-
+    <div className="min-h-screen w-full bg-white from-blue-50 via-indigo-100 to-purple-100 p-4 relative overflow-hidden">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-5 left-5 w-48 h-48 bg-blue-200/20 rounded-full blur-2xl"></div>
         <div className="absolute bottom-5 right-5 w-64 h-64 bg-purple-200/20 rounded-full blur-2xl"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto">
-
-
+      <div className="relative z-10 max-w-7xl mx-auto ">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full border border-gray-200 shadow-sm mb-3">
-            <span className="text-indigo-600 text-xs font-medium">🤖 AI Resume Analysis</span>
+          <div className="inline-flex items-center gap-2 bg-amber-white/80 backdrop-blur-sm px-3 py-1 rounded-full border border-gray-200 shadow-sm mb-3">
+            <span className="text-indigo-600 text-xs font-medium">
+              🤖 AI Resume Analysis
+            </span>
           </div>
 
           <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
             Resume
-            <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent"> Analyzer</span>
+            <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+              {" "}
+              Analyzer
+            </span>
           </h1>
 
           <p className="text-sm text-gray-600 max-w-lg mx-auto">
-            Upload your resume for instant AI analysis and improvement suggestions
+            Upload your resume for instant AI analysis and improvement
+            suggestions
           </p>
         </div>
 
-
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
-
-
-
           <div className="bg-white/80 backdrop-blur-sm p-3 rounded-xl border border-gray-200 text-center shadow-sm">
             <div className="text-lg font-bold text-indigo-600">6</div>
             <div className="text-xs text-gray-600">Analyzed</div>
@@ -120,14 +118,20 @@ const HomeCard = () => {
           </div>
         </div>
 
-
         <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 shadow-md mb-8">
           <div className="text-center">
-            <h2 className="text-lg font-bold text-gray-900 mb-1">Analyze Your Resume</h2>
-            <p className="text-gray-600 text-sm mb-4">Get instant AI-powered feedback</p>
+            <h2 className="text-lg font-bold text-gray-900 mb-1">
+              Analyze Your Resume
+            </h2>
+            <p className="text-gray-600 text-sm mb-4">
+              Get instant AI-powered feedback
+            </p>
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-              <button onClick={openForm} className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-2 rounded-lg font-semibold text-sm shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 flex items-center gap-2">
+              <button
+                onClick={openForm}
+                className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-2 rounded-lg font-semibold text-sm shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 flex items-center gap-2"
+              >
                 <span>📤</span>
                 Upload Resume
               </button>
@@ -140,9 +144,8 @@ const HomeCard = () => {
           </div>
         </div>
 
-
-        <div className="flex justify-between items-center mb-4 pl-8 pr-5">
-          <h2 className="text-lg font-bold text-gray-900">Recent Analysis</h2>
+        <div className="flex justify-between items-center mb-4 pl-8 pr-5 ">
+          <h2 className="text-lg font-bold text-gray-900"> Recent Analysis </h2>
           <div className="flex gap-2">
             <button className="bg-white/80 backdrop-blur-sm px-3 py-1 rounded-lg border border-gray-200 font-medium text-gray-700 text-sm hover:bg-indigo-600 hover:text-white transition-all duration-300">
               All
@@ -152,9 +155,10 @@ const HomeCard = () => {
             </button>
           </div>
         </div>
-
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 px-4 sm:px-6 lg:px-0">
+{/* 
+          resume card section */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-4 pb-4 px-4 sm:px-6 lg:pl-20 lg:pr-5
+        ">
           {resumeData.map((item) => (
             <ResumeCard
               key={item.id}
@@ -166,32 +170,40 @@ const HomeCard = () => {
               analysis={item.analysis}
             />
           ))}
-        </div> 
-
-     
-
+        </div>
 
         <div className="mt-12 bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 shadow-md">
-          <h2 className="text-lg font-bold text-center text-gray-900 mb-6">AI Analysis Features</h2>
+          <h2 className="text-lg font-bold text-center text-gray-900 mb-6">
+            AI Analysis Features
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="text-center p-3">
               <div className="text-2xl mb-2">🎯</div>
-              <h3 className="font-semibold text-gray-800 text-sm mb-1">ATS Check</h3>
-              <p className="text-gray-600 text-xs">Pass through tracking systems</p>
+              <h3 className="font-semibold text-gray-800 text-sm mb-1">
+                ATS Check
+              </h3>
+              <p className="text-gray-600 text-xs">
+                Pass through tracking systems
+              </p>
             </div>
             <div className="text-center p-3">
               <div className="text-2xl mb-2">📊</div>
-              <h3 className="font-semibold text-gray-800 text-sm mb-1">Skills Match</h3>
-              <p className="text-gray-600 text-xs">Compare with job requirements</p>
+              <h3 className="font-semibold text-gray-800 text-sm mb-1">
+                Skills Match
+              </h3>
+              <p className="text-gray-600 text-xs">
+                Compare with job requirements
+              </p>
             </div>
             <div className="text-center p-3">
               <div className="text-2xl mb-2">💡</div>
-              <h3 className="font-semibold text-gray-800 text-sm mb-1">Smart Tips</h3>
+              <h3 className="font-semibold text-gray-800 text-sm mb-1">
+                Smart Tips
+              </h3>
               <p className="text-gray-600 text-xs">Personalized improvements</p>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   );
