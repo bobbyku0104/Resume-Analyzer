@@ -33,7 +33,7 @@ export default function UiForm() {
   const isFormValid =
     formData.name &&
     formData.job &&
-    formData.description &&
+    // formData.description &&
     formData.experience &&
     file;
 
