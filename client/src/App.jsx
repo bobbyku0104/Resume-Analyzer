@@ -11,7 +11,7 @@ export default function App() {
       <ResumeProvider>
         <Routes>
           {/* Home Page */}
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
 
           {/* Form Page  */}
           <Route path="/form" element={<UiForm />} />
@@ -19,7 +19,7 @@ export default function App() {
           {/* Login Page */}
           <Route path="/login" element={<Login />} />
 
-          <Route path="/" element={<Summery />} />
+          
         </Routes>
       </ResumeProvider>
     </BrowserRouter>
