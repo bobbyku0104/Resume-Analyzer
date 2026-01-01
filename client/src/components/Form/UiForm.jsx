@@ -4,8 +4,10 @@ import PdfUpload from "./PdfUpload";
 import ResumeScan from "../ResumeScan/ResumeScan";
 import ResumeReviewPage from "../ReviewPage/ResumeReviewPage";
 import { ResumeContext } from "../Context/ResumeContext";
+const base_url = import.meta.env.VITE_BACKEND_URL;
 
 export default function UiForm() {
+  console.log(base_url)
   // ✅ CONTEXT (logic add)
   const { file, setFile, setAnalysis,  } = useContext(ResumeContext);
 
@@ -48,10 +50,13 @@ export default function UiForm() {
     formDataObj.append("resume", file);
 
     try {
-      const res = await fetch("http://localhost:3000/api/resume/analyze", {
-        method: "POST",
-        body: formDataObj,
-      });
+      const res = await fetch(
+       base_url +"/api/resume/analyze",
+        {
+          method: "POST",
+          body: formDataObj,
+        }
+      );
 
       const data = await res.json();
       console.log(data)
