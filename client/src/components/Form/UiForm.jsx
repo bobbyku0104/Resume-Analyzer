@@ -7,7 +7,6 @@ import { ResumeContext } from "../Context/ResumeContext";
 const base_url = import.meta.env.VITE_BACKEND_URL;
 
 export default function UiForm() {
-  console.log(base_url)
   // ✅ CONTEXT (logic add)
   const { file, setFile, setAnalysis,  } = useContext(ResumeContext);
 
@@ -51,7 +50,7 @@ export default function UiForm() {
 
     try {
       const res = await fetch(
-       base_url +"/api/resume/analyze",
+       base_url +"api/resume/analyze",
         {
           method: "POST",
           body: formDataObj,
