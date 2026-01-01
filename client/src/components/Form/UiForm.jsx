@@ -58,7 +58,6 @@ export default function UiForm() {
       );
 
       const data = await res.json();
-      console.log(data)
 
       // ✅ SAFETY CHECK
       if (!res.ok || !data.analysis) {
