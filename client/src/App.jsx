@@ -4,6 +4,8 @@ import UiForm from "./components/Form/UiForm";
 import Login from "./components/Login";
 import { ResumeProvider } from "./components/Context/ResumeContext.jsx";
 import Summery from "./components/ReviewPage/ResumeReviewPage.jsx";
+import ResumeReviewPage from "./components/ReviewPage/ResumeReviewPage.jsx";
+import ResumeScan from "./components/ResumeScan/ResumeScan.jsx";
 
 export default function App() {
   return (
@@ -17,9 +19,7 @@ export default function App() {
           <Route path="/form" element={<UiForm />} />
 
           {/* Login Page */}
-          <Route path="/login" element={<Login />} />
-
-          
+          <Route path="/review" element={<ResumeReviewPage />} />
         </Routes>
       </ResumeProvider>
     </BrowserRouter>

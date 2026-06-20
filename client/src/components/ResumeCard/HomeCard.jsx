@@ -4,6 +4,7 @@ import Sample1 from "../../assets/resume photo.jpg";
 import Sample2 from "../../assets/resume photo.jpg";
 import Sample3 from "../../assets/resume photo.jpg";
 import { useNavigate } from "react-router-dom";
+import { Sparkles, BarChart3, AlertCircle, FileText, CheckCircle2, TrendingUp } from "lucide-react";
 
 const resumeData = [
   {
@@ -60,7 +61,6 @@ const resumeData = [
     status: "Strong Match",
     analysis: "8/10 Skills"
   },
-  
 ];
 
 const HomeCard = () => {
@@ -69,73 +69,75 @@ const HomeCard = () => {
   const openForm = () => {
     navigate("/form");
   };
+
   return (
-    <div className="min-h-screen w-full bg-white from-blue-50 via-indigo-100 to-purple-100 p-4 relative overflow-hidden">
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-5 left-5 w-48 h-48 bg-blue-200/20 rounded-full blur-2xl"></div>
-        <div className="absolute bottom-5 right-5 w-64 h-64 bg-purple-200/20 rounded-full blur-2xl"></div>
+    <div className="w-full py-16 px-4 md:px-8 relative overflow-hidden bg-transparent z-10">
+      {/* Soft Background Blobs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-10 left-10 w-72 h-72 bg-indigo-500/5 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div className="absolute bottom-10 right-10 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse-slow [animation-delay:2s]"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto ">
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 bg-amber-white/80 backdrop-blur-sm px-3 py-1 rounded-full border border-gray-200 shadow-sm mb-3">
-            <span className="text-indigo-600 text-xs font-medium">
-              🤖 AI Resume Analysis
+      <div className="relative z-10 max-w-6xl mx-auto">
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 bg-indigo-500/10 backdrop-blur-md px-3 py-1 rounded-full border border-indigo-500/20 shadow-sm mb-4">
+            <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
+            <span className="text-indigo-300 text-xs font-semibold uppercase tracking-wider">
+              AI Resume Tracking
             </span>
           </div>
 
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-            Resume
-            <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-              {" "}
-              Analyzer
-            </span>
-          </h1>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3 tracking-tight">
+            Dashboard Overview
+          </h2>
 
-          <p className="text-sm text-gray-600 max-w-lg mx-auto">
-            Upload your resume for instant AI analysis and improvement
-            suggestions
+          <p className="text-sm md:text-base text-gray-400 max-w-lg mx-auto leading-relaxed">
+            Upload your resume for instant AI analysis, feedback scoring, and progress tracking.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
-          <div className="bg-white/80 backdrop-blur-sm p-3 rounded-xl border border-gray-200 text-center shadow-sm">
-            <div className="text-lg font-bold text-indigo-600">6</div>
-            <div className="text-xs text-gray-600">Analyzed</div>
+        {/* Stats Grid */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8 max-w-4xl mx-auto">
+          <div className="bg-white/5 backdrop-blur-md p-5 rounded-2xl border border-white/10 text-center shadow-lg hover:border-indigo-500/30 hover:scale-[1.02] hover:bg-white/10 transition-all duration-300 group">
+            <div className="text-3xl font-black text-indigo-400 group-hover:text-indigo-300 transition-colors">6</div>
+            <div className="text-xs font-semibold text-gray-400 mt-1.5 uppercase tracking-wider">Analyzed</div>
           </div>
-          <div className="bg-white/80 backdrop-blur-sm p-3 rounded-xl border border-gray-200 text-center shadow-sm">
-            <div className="text-lg font-bold text-green-600">83%</div>
-            <div className="text-xs text-gray-600">Avg Score</div>
+          <div className="bg-white/5 backdrop-blur-md p-5 rounded-2xl border border-white/10 text-center shadow-lg hover:border-green-500/30 hover:scale-[1.02] hover:bg-white/10 transition-all duration-300 group">
+            <div className="text-3xl font-black text-green-400 group-hover:text-green-300 transition-colors">83%</div>
+            <div className="text-xs font-semibold text-gray-400 mt-1.5 uppercase tracking-wider">Avg Score</div>
           </div>
-          <div className="bg-white/80 backdrop-blur-sm p-3 rounded-xl border border-gray-200 text-center shadow-sm">
-            <div className="text-lg font-bold text-purple-600">24</div>
-            <div className="text-xs text-gray-600">Suggestions</div>
+          <div className="bg-white/5 backdrop-blur-md p-5 rounded-2xl border border-white/10 text-center shadow-lg hover:border-purple-500/30 hover:scale-[1.02] hover:bg-white/10 transition-all duration-300 group">
+            <div className="text-3xl font-black text-purple-400 group-hover:text-purple-300 transition-colors">24</div>
+            <div className="text-xs font-semibold text-gray-400 mt-1.5 uppercase tracking-wider">Suggestions</div>
           </div>
-          <div className="bg-white/80 backdrop-blur-sm p-3 rounded-xl border border-gray-200 text-center shadow-sm">
-            <div className="text-lg font-bold text-blue-600">4</div>
-            <div className="text-xs text-gray-600">Strong</div>
+          <div className="bg-white/5 backdrop-blur-md p-5 rounded-2xl border border-white/10 text-center shadow-lg hover:border-blue-500/30 hover:scale-[1.02] hover:bg-white/10 transition-all duration-300 group">
+            <div className="text-3xl font-black text-blue-400 group-hover:text-blue-300 transition-colors">4</div>
+            <div className="text-xs font-semibold text-gray-400 mt-1.5 uppercase tracking-wider">Strong Matches</div>
           </div>
         </div>
 
-        <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 shadow-md mb-8">
-          <div className="text-center">
-            <h2 className="text-lg font-bold text-gray-900 mb-1">
+        {/* Analyze Call-To-Action Box */}
+        <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 shadow-2xl max-w-3xl mx-auto mb-14 hover:border-indigo-500/20 transition-all duration-500 relative overflow-hidden group">
+          <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/5 to-cyan-500/5 opacity-50 group-hover:scale-105 transition-transform duration-700"></div>
+          <div className="text-center relative z-10">
+            <h3 className="text-xl font-bold text-white mb-2 flex items-center justify-center gap-2">
+              <FileText className="w-5 h-5 text-indigo-400 animate-pulse" />
               Analyze Your Resume
-            </h2>
-            <p className="text-gray-600 text-sm mb-4">
-              Get instant AI-powered feedback
+            </h3>
+            <p className="text-gray-400 text-sm mb-6 max-w-md mx-auto">
+              Get instant AI-powered feedback and detailed score optimization suggestions in seconds.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <button
                 onClick={openForm}
-                className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-2 rounded-lg font-semibold text-sm shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 flex items-center gap-2"
+                className="bg-gradient-to-r from-cyan-500 via-indigo-500 to-purple-600 text-white px-8 py-3 rounded-xl font-bold text-sm shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.04] transition-all duration-300 flex items-center gap-2 cursor-pointer"
               >
                 <span>📤</span>
                 Upload Resume
               </button>
 
-              <button className="bg-white text-gray-700 px-6 py-2 rounded-lg font-semibold text-sm border border-gray-300 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 flex items-center gap-2">
+              <button className="bg-white/5 text-gray-200 px-8 py-3 rounded-xl font-bold text-sm border border-white/10 hover:bg-white/10 hover:border-white/20 hover:scale-[1.04] transition-all duration-300 flex items-center gap-2 cursor-pointer">
                 <span>🎯</span>
                 Analyze Job
               </button>
@@ -143,22 +145,24 @@ const HomeCard = () => {
           </div>
         </div>
 
-        <div className="flex justify-between items-center mb-4 pl-8 pr-5 ">
-          <h2 className="text-lg font-bold text-gray-900"> Recent Analysis </h2>
-          <div className="flex gap-2">
-            <button className="bg-white/80 backdrop-blur-sm px-3 py-1 rounded-lg border border-gray-200 font-medium text-gray-700 text-sm hover:bg-indigo-600 hover:text-white transition-all duration-300">
+        {/* Filter / Recent Analysis Header */}
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-8 max-w-6xl mx-auto px-4">
+          <h3 className="text-xl font-extrabold text-white tracking-tight flex items-center gap-2">
+            <span className="w-2 h-5 bg-gradient-to-b from-cyan-400 to-indigo-500 rounded-full"></span>
+            Recent Analyses
+          </h3>
+          <div className="flex gap-2.5">
+            <button className="bg-white/5 hover:bg-indigo-600 hover:text-white backdrop-blur-md px-4 py-1.5 rounded-xl border border-white/10 font-bold text-gray-300 text-xs transition-all duration-300 cursor-pointer shadow-md">
               All
             </button>
-            <button className="bg-white/80 backdrop-blur-sm px-3 py-1 rounded-lg border border-gray-200 font-medium text-gray-700 text-sm hover:bg-indigo-600 hover:text-white transition-all duration-300">
+            <button className="bg-white/5 hover:bg-indigo-600 hover:text-white backdrop-blur-md px-4 py-1.5 rounded-xl border border-white/10 font-bold text-gray-300 text-xs transition-all duration-300 cursor-pointer shadow-md">
               Strong
             </button>
           </div>
         </div>
-        {/* 
-          resume card section */}
-      
 
-        <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {/* Recent Analysis Cards Grid */}
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto justify-items-center">
           {resumeData.map((item) => (
             <ResumeCard
               key={item.id}
@@ -172,35 +176,40 @@ const HomeCard = () => {
           ))}
         </div>
 
-        <div className="mt-12 bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 shadow-md">
-          <h2 className="text-lg font-bold text-center text-gray-900 mb-6">
+        {/* Core Analysis Features Grid */}
+        <div className="mt-16 bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 shadow-2xl max-w-4xl mx-auto hover:border-indigo-500/20 transition-all duration-500">
+          <h3 className="text-lg font-bold text-center text-indigo-400 mb-8 tracking-wider uppercase flex items-center justify-center gap-2">
+            <TrendingUp className="w-5 h-5 text-indigo-400" />
             AI Analysis Features
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="text-center p-3">
-              <div className="text-2xl mb-2">🎯</div>
-              <h3 className="font-semibold text-gray-800 text-sm mb-1">
+          </h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="text-center p-5 bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/10 rounded-2xl transition-all duration-300 group">
+              <div className="text-3xl mb-3 group-hover:scale-110 transition-transform duration-300">🎯</div>
+              <h4 className="font-bold text-white text-sm mb-1.5">
                 ATS Check
-              </h3>
-              <p className="text-gray-600 text-xs">
-                Pass through tracking systems
+              </h4>
+              <p className="text-gray-400 text-xs leading-relaxed">
+                Ensure your document successfully passes standard automated tracking filters.
               </p>
             </div>
-            <div className="text-center p-3">
-              <div className="text-2xl mb-2">📊</div>
-              <h3 className="font-semibold text-gray-800 text-sm mb-1">
+            <div className="text-center p-5 bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/10 rounded-2xl transition-all duration-300 group">
+              <div className="text-3xl mb-3 group-hover:scale-110 transition-transform duration-300">📊</div>
+              <h4 className="font-bold text-white text-sm mb-1.5">
                 Skills Match
-              </h3>
-              <p className="text-gray-600 text-xs">
-                Compare with job requirements
+              </h4>
+              <p className="text-gray-400 text-xs leading-relaxed">
+                Compare your hard and soft skills directly with actual job descriptions.
               </p>
             </div>
-            <div className="text-center p-3">
-              <div className="text-2xl mb-2">💡</div>
-              <h3 className="font-semibold text-gray-800 text-sm mb-1">
+            <div className="text-center p-5 bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/10 rounded-2xl transition-all duration-300 group">
+              <div className="text-3xl mb-3 group-hover:scale-110 transition-transform duration-300">💡</div>
+              <h4 className="font-bold text-white text-sm mb-1.5">
                 Smart Tips
-              </h3>
-              <p className="text-gray-600 text-xs">Personalized improvements</p>
+              </h4>
+              <p className="text-gray-400 text-xs leading-relaxed">
+                Receive context-aware, bullet-point revisions to highlight achievements.
+              </p>
             </div>
           </div>
         </div>

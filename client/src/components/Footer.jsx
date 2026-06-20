@@ -1,135 +1,96 @@
 import React from "react";
+import { Share2, Globe } from "lucide-react";
 
-const Footer = ({ 
-  companyName = "ResumeAI", 
-  tagline = "AI-Powered Resume Analysis",
-  currentYear = new Date().getFullYear(),
-  showSocialLinks = true,
-  showNewsletter = true,
-  showQuickLinks = true 
-}) => {
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-gray-900 text-white pt-12 pb-8">
-      <div className="max-w-7xl mx-auto px-4">
-        
-       
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-          
-          
-          <div className="lg:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">AI</span>
-              </div>
-              <h3 className="text-xl font-bold">{companyName}</h3>
-            </div>
-            <p className="text-gray-400 text-sm mb-4">
-              {tagline}. Get instant AI-powered feedback on your resume and boost your job search success rate.
-            </p>
-            {showSocialLinks && (
-              <div className="flex gap-3">
-                <SocialIcon href="#" icon="📘" label="Facebook" />
-                <SocialIcon href="#" icon="🐦" label="Twitter" />
-                <SocialIcon href="#" icon="📷" label="Instagram" />
-                <SocialIcon href="#" icon="💼" label="LinkedIn" />
-              </div>
-            )}
-          </div>
-
-          
-          {showQuickLinks && (
-            <div>
-              <h4 className="font-semibold text-lg mb-4">Quick Links</h4>
-              <div className="space-y-2">
-                <FooterLink href="#" label="Home" />
-                <FooterLink href="#" label="Analyze Resume" />
-                <FooterLink href="#" label="Templates" />
-                <FooterLink href="#" label="Pricing" />
-                <FooterLink href="#" label="About Us" />
-              </div>
-            </div>
-          )}
-
-         
-          <div>
-            <h4 className="font-semibold text-lg mb-4">Features</h4>
-            <div className="space-y-2">
-              <FooterLink href="#" label="ATS Optimization" />
-              <FooterLink href="#" label="Skills Analysis" />
-              <FooterLink href="#" label="Job Matching" />
-              <FooterLink href="#" label="Career Insights" />
-              <FooterLink href="#" label="Resume Scoring" />
-            </div>
-          </div>
-
-         
-          {showNewsletter && (
-            <div>
-              <h4 className="font-semibold text-lg mb-4">Stay Updated</h4>
-              <p className="text-gray-400 text-sm mb-3">
-                Get the latest career tips and AI insights delivered to your inbox.
-              </p>
-              <NewsletterForm />
-            </div>
-          )}
-        </div>
-
-        
-        <div className="border-t border-gray-800 pt-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-gray-400 text-sm">
-              © {currentYear} {companyName}. All rights reserved.
-            </div>
-            <div className="flex gap-6 text-sm">
-              <FooterLink href="#" label="Privacy Policy" />
-              <FooterLink href="#" label="Terms of Service" />
-              <FooterLink href="#" label="Cookie Policy" />
-            </div>
+    <footer className="w-full border-t border-white/5 bg-[#030712] text-gray-400 py-16 px-6 relative z-10">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        {/* Column 1 - Brand & Socials */}
+        <div>
+          <h3 className="text-xl font-bold text-white mb-4">ResumeAI</h3>
+          <p className="text-xs md:text-sm leading-relaxed mb-6 max-w-xs text-gray-400">
+            Empowering careers through intelligent AI analysis and strategic job tracking.
+          </p>
+          <div className="flex gap-3">
+            <button className="w-9 h-9 rounded-full border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/10 flex items-center justify-center text-white transition-all cursor-pointer">
+              <Share2 className="w-4 h-4 text-gray-300" />
+            </button>
+            <button className="w-9 h-9 rounded-full border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/10 flex items-center justify-center text-white transition-all cursor-pointer">
+              <Globe className="w-4 h-4 text-gray-300" />
+            </button>
           </div>
         </div>
 
+        {/* Column 2 - Product */}
+        <div>
+          <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">Product</h4>
+          <ul className="space-y-2.5 text-xs md:text-sm">
+            <li>
+              <a href="#" className="hover:text-white transition-colors duration-300">Resume Builder</a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-white transition-colors duration-300">AI Analyzer</a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-white transition-colors duration-300">ATS Optimizer</a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-white transition-colors duration-300">Skill Gap Analysis</a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Column 3 - Resources */}
+        <div>
+          <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">Resources</h4>
+          <ul className="space-y-2.5 text-xs md:text-sm">
+            <li>
+              <a href="#" className="hover:text-white transition-colors duration-300">Career Blog</a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-white transition-colors duration-300">ATS Guide</a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-white transition-colors duration-300">Interview Tips</a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-white transition-colors duration-300">Templates</a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Column 4 - Company */}
+        <div>
+          <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">Company</h4>
+          <ul className="space-y-2.5 text-xs md:text-sm">
+            <li>
+              <a href="#" className="hover:text-white transition-colors duration-300">About Us</a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-white transition-colors duration-300">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-white transition-colors duration-300">Terms of Service</a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-white transition-colors duration-300">Cookie Policy</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="max-w-6xl mx-auto pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
+        <span>© {currentYear} ResumeAI. All rights reserved.</span>
+        <button className="flex items-center gap-1.5 hover:text-white transition-colors cursor-pointer">
+          <Globe className="w-3.5 h-3.5" />
+          <span>English (US)</span>
+        </button>
       </div>
     </footer>
   );
 };
-
-
-const SocialIcon = ({ href, icon, label }) => (
-  <a 
-    href={href} 
-    className="w-10 h-10 bg-gray-800 hover:bg-indigo-600 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
-    aria-label={label}
-  >
-    <span className="text-lg">{icon}</span>
-  </a>
-);
-
-
-const FooterLink = ({ href, label }) => (
-  <a 
-    href={href} 
-    className="text-gray-400 hover:text-white transition-colors duration-300 text-sm block hover:translate-x-1 transform"
-  >
-    {label}
-  </a>
-);
-
-const NewsletterForm = () => (
-  <div className="space-y-3">
-    <div className="flex gap-2">
-      <input 
-        type="email" 
-        placeholder="Enter your email"
-        className="flex-1 px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white text-sm placeholder-gray-400 focus:outline-none focus:border-indigo-500"
-      />
-      <button className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-semibold text-sm transition-all duration-300 hover:scale-105">
-        Subscribe
-      </button>
-    </div>
-    <p className="text-gray-500 text-xs">
-      No spam. Unsubscribe at any time.
-    </p>
-  </div>
-);
 
 export default Footer;
