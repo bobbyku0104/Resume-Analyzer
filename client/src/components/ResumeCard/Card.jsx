@@ -10,21 +10,20 @@ const Card = ({ image, title, score, date, status, analysis }) => {
 
   return (
     <div className="
+   
       group 
       w-full
       sm:w-[280px] 
       md:w-[320px]
       lg:w-[350px]
-      bg-white/5 
+      bg-white/30 
       backdrop-blur-xl 
       rounded-2xl 
-      shadow-2xl 
+      shadow-xl 
       border 
-      border-white/10 
-      p-3.5
+      border-white/40 
+      p-3
       hover:scale-[1.03] 
-      hover:border-indigo-500/40
-      hover:shadow-indigo-500/10
       transition-all 
       duration-300 
       cursor-pointer 
@@ -33,52 +32,52 @@ const Card = ({ image, title, score, date, status, analysis }) => {
     ">
 
       {/* Soft gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/0 via-indigo-500/0 to-indigo-500/5 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to- from-indigo-100/40 via-purple-100/30 to-pink-100/40 pointer-events-none"></div>
 
       {/* Status Badge */}
       <div
-        className={`absolute top-2.5 left-2.5 bg-gradient-to-r ${statusColors[status]} text-white px-2.5 py-0.5 rounded-full text-[10px] font-black z-10 shadow-md shadow-black/20 tracking-wider uppercase`}
+        className={`  absolute top-2 left-2 bg-gradient-to ${statusColors[status]} text-white px-2 py-0.5 rounded-full text-[10px] font-bold z-10 shadow-md`}
       >
         {status}
       </div>
 
       {/* Card Image */}
-      <div className="relative overflow-hidden rounded-lg mb-3 h-[130px] z-10 border border-white/5">
+      <div className="relative overflow-hidden rounded-lg mb-2 h-[120px] z-10">
         <img
           src={image}
           alt={title}
           className="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-500"
         />
-        <div className="absolute top-1.5 right-1.5 bg-black/75 backdrop-blur-md text-white px-2 py-0.5 rounded-md text-[10px] font-black tracking-wider border border-white/10">
+        <div className="absolute top-1 right-1 bg-black/80 text-white px-1.5 py-0.5 rounded-md text-[10px] font-bold">
           {score}%
         </div>
       </div>
 
       {/* Content */}
-      <div className="space-y-2 z-10 relative">
-        <h3 className="text-sm font-bold text-white group-hover:text-indigo-400 transition-colors duration-300 line-clamp-2 leading-snug">
+      <div className="space-y-1 z-10 relative">
+        <h2 className="text-sm font-semibold text-gray-800 group-hover:text-indigo-600 transition-colors duration-300 line-clamp-2">
           {title}
-        </h3>
+        </h2>
 
         <div className="flex justify-between items-center text-[11px]">
-          <span className="text-gray-400">Skills:</span>
-          <span className="text-gray-200 font-semibold line-clamp-1 max-w-[135px] text-right">
+          <span className="text-gray-500">Skills:</span>
+          <span className="text-gray-700 font-medium line-clamp-1 max-w-[120px] text-right">
             {analysis}
           </span>
         </div>
 
         <div className="flex justify-between items-center text-[11px]">
-          <span className="text-gray-400">Date:</span>
-          <span className="text-gray-200 font-semibold">{date}</span>
+          <span className="text-gray-500">Date:</span>
+          <span className="text-gray-700 font-medium">{date}</span>
         </div>
 
         {/* Score Bar */}
-        <div className="pt-1.5">
-          <div className="flex justify-between text-[11px] text-gray-400 mb-1">
+        <div className="pt-1">
+          <div className="flex justify-between text-[11px] text-gray-600 mb-0.5">
             <span>Score</span>
-            <span className="font-semibold text-gray-200">{score}%</span>
+            <span>{score}%</span>
           </div>
-          <div className="w-full bg-white/10 rounded-full h-1.5">
+          <div className="w-full bg-gray-200 rounded-full h-1.5">
             <div
               className={`h-1.5 rounded-full transition-all duration-500 ${
                 score >= 90
@@ -95,11 +94,11 @@ const Card = ({ image, title, score, date, status, analysis }) => {
         </div>
 
         {/* Buttons */}
-        <div className="flex gap-2 pt-2.5">
-          <button className="flex-1 bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white py-1.5 px-2 rounded-lg font-bold text-[11px] transition-all duration-300 shadow-md shadow-indigo-600/10 hover:shadow-indigo-600/25 hover:scale-[1.02] cursor-pointer">
+        <div className="flex gap-1.5 pt-2">
+          <button className="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white py-1 px-2 rounded-md font-semibold text-[11px] transition-all duration-300 shadow-sm">
             View
           </button>
-          <button className="flex-1 bg-white/5 hover:bg-white/10 text-gray-200 py-1.5 px-2 rounded-lg font-bold text-[11px] transition-all duration-300 border border-white/10 hover:border-white/20 hover:scale-[1.02] cursor-pointer">
+          <button className="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 py-1 px-2 rounded-md font-semibold text-[11px] transition-all duration-300 border border-gray-200">
             Edit
           </button>
         </div>
